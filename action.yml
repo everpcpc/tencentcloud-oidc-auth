@@ -1,0 +1,42 @@
+name: 'Authenticate to Tencent Cloud'
+description: |-
+  Authenticate to Tencent Cloud with GitHub Actions OIDC tokens.
+inputs:
+  audience:
+    description: |-
+      The value for the audience (aud) parameter in GitHub's generated OIDC
+      token.
+    default: 'sts.tencentcloudapi.com'
+    required: false
+  region:
+    description: |-
+      Tencent Cloud Region
+    default: 'ap-guangzhou'
+    required: false
+  role-arn:
+    description: |-
+      Use the OIDC token to assume an RAM role.
+    required: true
+  # oidc-provider-arn:
+  #   description: |-
+  #     The arn of OIDC provider.
+  #   required: true
+  role-duration-seconds:
+    description: |-
+      Role duration in seconds.
+    default: '3600'
+    required: false
+  role-session-name:
+    description: |-
+      Role session name
+    default: 'github-actions-<orgName>-<repoName>'
+    required: false
+
+branding:
+  icon: 'lock'
+  color: 'blue'
+
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
+  post: 'dist/post/index.js'
