@@ -5,7 +5,7 @@
     "main": "src/index.ts",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "ncc build src/index.ts --source-map --license LICENSE -o dist && ncc build src/post.ts --source-map --license LICENSE -o dist/post"
+        "build": "ncc build src/index.ts --source-map --license LICENSE -o dist && ncc build src/cleanup.ts --source-map --license LICENSE -o dist/cleanup"
     },
     "repository": {
         "type": "git",

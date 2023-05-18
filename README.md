@@ -14,13 +14,13 @@ jobs:
     steps:
       - uses: everpcpc/tencentcloud-oidc-auth@v1
         with:
-          role-arn: arn:tc:iam::1234567890:role/role-name
-          role-session-name: github-actions
+          role-arn: qcs::cam::uin/1234567890:roleName/role-name
+          role-session-name: github-actions-test
           role-duration-seconds: 3600
           audience: sts.tencentcloudapi.com
           region: ap-guangzhou
       - run: pip install tccli
-      - run: tccli cam DescribeUser
+      - run: tccli sts GetCallerIdentity
 ```
 
 ## Inputs

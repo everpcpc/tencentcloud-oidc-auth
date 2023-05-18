@@ -17,10 +17,6 @@ inputs:
     description: |-
       Use the OIDC token to assume an RAM role.
     required: true
-  # oidc-provider-arn:
-  #   description: |-
-  #     The arn of OIDC provider.
-  #   required: true
   role-duration-seconds:
     description: |-
       Role duration in seconds.
@@ -39,4 +35,4 @@ branding:
 runs:
   using: 'node16'
   main: 'dist/index.js'
-  post: 'dist/post/index.js'
+  post: 'dist/cleanup/index.js'
