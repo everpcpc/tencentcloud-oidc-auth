@@ -1,0 +1,23 @@
+name: test
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  assume:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - run: pip install tccli
+      - uses: everpcpc/tencentcloud-oidc-auth@main
+        with:
+          role-arn: ${{ secrets.ROLE_ARN }}
+          role-duration-seconds: 30
+          oidc-provider-id: github
+          audience: sts.tencentcloudapi.com
+          region: ap-guangzhou
+      - run: tccli sts GetCallerIdentity

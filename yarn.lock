@@ -27,13 +27,6 @@
   dependencies:
     tunnel "^0.0.6"
 
-"@google-github-actions/actions-utils@^0.4.8":
-  version "0.4.8"
-  resolved "https://registry.yarnpkg.com/@google-github-actions/actions-utils/-/actions-utils-0.4.8.tgz#18a6dd576fe0cfbfa5374a5cc59602498587d954"
-  integrity sha512-nSuLx749tnlY+u2Vf392oupmxRzHnI7gPaBk0BIiE7rNOo+5UoiKxBfMOXF8HEffkdQmUcLQoey73pVsXt4+HA==
-  dependencies:
-    yaml "^2.2.2"
-
 "@octokit/auth-token@^2.4.4":
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/@octokit/auth-token/-/auth-token-2.5.0.tgz#27c37ea26c205f28443402477ffd261311f21e36"
@@ -137,6 +130,15 @@ asynckit@^0.4.0:
   resolved "https://registry.yarnpkg.com/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
   integrity sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==
 
+axios@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-1.4.0.tgz#38a7bf1224cd308de271146038b551d725f0be1f"
+  integrity sha512-S4XCWMEmzvo64T9GfvQDOXgYRDJ/wsSZc7Jvdgx5u1sd0JwsuPLqb3SYmusag+edF6ziyMensPVqLTSc1PiSEA==
+  dependencies:
+    follow-redirects "^1.15.0"
+    form-data "^4.0.0"
+    proxy-from-env "^1.1.0"
+
 before-after-hook@^2.2.0:
   version "2.2.3"
   resolved "https://registry.yarnpkg.com/before-after-hook/-/before-after-hook-2.2.3.tgz#c51e809c81a4e354084422b9b26bad88249c517c"
@@ -166,10 +168,24 @@ deprecation@^2.0.0, deprecation@^2.3.1:
   resolved "https://registry.yarnpkg.com/deprecation/-/deprecation-2.3.1.tgz#6368cbdb40abf3373b525ac87e4a260c3a700919"
   integrity sha512-xmHIy4F3scKVwMsQ4WnVaS8bHOx0DmVwRywosKhaILI0ywMDWPtBSku2HNxRvF7jtwDRsoEwYQSfbxj8b7RlJQ==
 
+follow-redirects@^1.15.0:
+  version "1.15.2"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.15.2.tgz#b460864144ba63f2681096f274c4e57026da2c13"
+  integrity sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA==
+
 form-data@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/form-data/-/form-data-3.0.1.tgz#ebd53791b78356a99af9a300d4282c4d5eb9755f"
   integrity sha512-RHkBKtLWUVwd7SqRIvCZMEvAMoGUp0XU+seQiZejj0COz3RI3hWP4sCv3gZWWLjJTd7rGwcsF5eKZGii0r/hbg==
+  dependencies:
+    asynckit "^0.4.0"
+    combined-stream "^1.0.8"
+    mime-types "^2.1.12"
+
+form-data@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/form-data/-/form-data-4.0.0.tgz#93919daeaf361ee529584b9b31664dc12c9fa452"
+  integrity sha512-ETEklSGi5t0QMZuiXoA/Q6vcnxcLQP5vdugSpuAyi6SVGi2clPPp+xgEhuMaHC+zGgn31Kd235W35f7Hykkaww==
   dependencies:
     asynckit "^0.4.0"
     combined-stream "^1.0.8"
@@ -229,10 +245,15 @@ once@^1.4.0:
   dependencies:
     wrappy "1"
 
-tencentcloud-sdk-nodejs@^4.0.601:
-  version "4.0.601"
-  resolved "https://registry.yarnpkg.com/tencentcloud-sdk-nodejs/-/tencentcloud-sdk-nodejs-4.0.601.tgz#37d2a042b0baa6cbf760f87f18963778f90fc731"
-  integrity sha512-yJV9zI1fPfRRrx4OB66DUCBz4QhCM66o+BFNADOfyym1p/so05Y/9Uym8x5TrzTYUgPxbboCQjI2WJBcJmtuXw==
+proxy-from-env@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/proxy-from-env/-/proxy-from-env-1.1.0.tgz#e102f16ca355424865755d2c9e8ea4f24d58c3e2"
+  integrity sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==
+
+tencentcloud-sdk-nodejs@^4.0.602:
+  version "4.0.602"
+  resolved "https://registry.yarnpkg.com/tencentcloud-sdk-nodejs/-/tencentcloud-sdk-nodejs-4.0.602.tgz#155d6d95ec68a9e5825f1ca6e204c483ac9e94a9"
+  integrity sha512-t3yCN6stERdfIoSgUHiX3dd7S7JAf2jDFxg7NuVv7KbJvgkYl4Y00a3/f3kFo5WOQP9dN35d7+KSTTuxRzP7Ww==
   dependencies:
     form-data "^3.0.0"
     get-stream "^6.0.0"
@@ -288,8 +309,3 @@ wrappy@1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/wrappy/-/wrappy-1.0.2.tgz#b5243d8f3ec1aa35f1364605bc0d1036e30ab69f"
   integrity sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==
-
-yaml@^2.2.2:
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/yaml/-/yaml-2.2.2.tgz#ec551ef37326e6d42872dad1970300f8eb83a073"
-  integrity sha512-CBKFWExMn46Foo4cldiChEzn7S7SRV+wqiluAb6xmueD/fGyRHIhX8m14vVGgeFWjN540nKCNVj6P21eQjgTuA==

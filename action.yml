@@ -17,6 +17,10 @@ inputs:
     description: |-
       Use the OIDC token to assume an RAM role.
     required: true
+  oidc-provider-id:
+    description: |-
+      Provider name of the GitHub OIDC provider in your Tencent Cloud account.
+    required: false
   role-duration-seconds:
     description: |-
       Role duration in seconds.
@@ -26,6 +30,11 @@ inputs:
     description: |-
       Role session name
     default: 'github-actions-<orgName>-<repoName>'
+    required: false
+  mask-account-id:
+    description: |-
+      Mask the account ID in the output.
+    default: 'true'
     required: false
 
 branding:

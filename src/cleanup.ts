@@ -1,7 +1,7 @@
 'use strict';
 
 import * as core from '@actions/core';
-import * as utils from './utils';
+import { ExportEnvs } from './utils';
 
 /**
  * When the GitHub Actions job is done, clean up any environment variables that
@@ -19,7 +19,7 @@ async function main() {
         // The GitHub Actions toolkit does not have an option to completely unset
         // environment variables, so we overwrite the current value with an empty
         // string.
-        utils.exportEnvs('', '', '', '');
+        ExportEnvs('', '', '', '');
     } catch (error) {
         // @ts-ignore
         core.setFailed(error.message);
