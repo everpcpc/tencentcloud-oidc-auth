@@ -2,7 +2,7 @@
 
 import * as core from '@actions/core';
 import axios from 'axios';
-import { ExportEnvs, GenSessionName } from './utils';
+import { ExportEnvs, GenSessionName, retry } from './utils';
 import { AssumeRoleWithWebIdentityRequest, AssumeRoleWithWebIdentityResponse } from './models';
 import { sts } from 'tencentcloud-sdk-nodejs';
 
@@ -76,7 +76,7 @@ async function main() {
         RoleArn: roleArn,
         ProviderId: oidcProviderId,
     };
-    const resp = await assumeRole(req, region);
+    const resp = await retry(assumeRole, [req, region], 10);
     await checkCallerIdentity(resp, region, maskAccountId);
 
     ExportEnvs(resp.Credentials.TmpSecretId, resp.Credentials.TmpSecretKey, resp.Credentials.Token, region);

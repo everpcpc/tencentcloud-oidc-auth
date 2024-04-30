@@ -25,13 +25,13 @@
     },
     "homepage": "https://github.com/everpcpc/tencentcloud-oidc-auth#readme",
     "dependencies": {
-        "@actions/core": "^1.10.0",
-        "@actions/github": "^5.1.1",
-        "axios": "^1.4.0",
-        "tencentcloud-sdk-nodejs": "^4.0.602"
+        "@actions/core": "^1.10.1",
+        "@actions/github": "^6.0.0",
+        "axios": "^1.6.8",
+        "tencentcloud-sdk-nodejs": "^4.0.845"
     },
     "devDependencies": {
-        "@vercel/ncc": "^0.36.1",
-        "typescript": "^5.0.4"
+        "@vercel/ncc": "^0.38.1",
+        "typescript": "^5.4.5"
     }
 }
