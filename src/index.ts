@@ -52,6 +52,7 @@ async function checkCallerIdentity(identity: AssumeRoleWithWebIdentityResponse, 
     if (!resp.AccountId) {
         throw new Error(`GetCallerIdentity failed, AccountId is null, RequestId: ${resp.RequestId}`);
     }
+    core.info("Authenticated to Tencent Cloud as: " + resp.UserId);
     if (maskAccountId) {
         core.setSecret(resp.AccountId);
     }
