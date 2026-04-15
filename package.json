@@ -5,7 +5,7 @@
     "main": "src/index.ts",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "ncc build src/index.ts -o dist && ncc build src/cleanup.ts -o dist/cleanup"
+        "build": "esbuild src/index.ts --bundle --platform=node --target=node24 --outfile=dist/index.js && esbuild src/cleanup.ts --bundle --platform=node --target=node24 --outfile=dist/cleanup/index.js"
     },
     "repository": {
         "type": "git",
@@ -25,13 +25,13 @@
     },
     "homepage": "https://github.com/everpcpc/tencentcloud-oidc-auth#readme",
     "dependencies": {
-        "@actions/core": "^1.11.1",
-        "@actions/github": "^6.0.1",
+        "@actions/core": "^3.0.0",
+        "@actions/github": "^9.1.0",
         "axios": "^1.15.0",
         "tencentcloud-sdk-nodejs": "^4.1.214"
     },
     "devDependencies": {
-        "@vercel/ncc": "^0.38.4",
+        "esbuild": "^0.28.0",
         "typescript": "^5.9.3"
     }
 }
