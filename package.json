@@ -31,7 +31,13 @@
         "tencentcloud-sdk-nodejs": "^4.1.214"
     },
     "devDependencies": {
+        "@types/node": "^25.6.0",
         "esbuild": "^0.28.0",
-        "typescript": "^5.9.3"
+        "typescript": "^6.0.2"
+    },
+    "pnpm": {
+        "onlyBuiltDependencies": [
+            "esbuild"
+        ]
     }
 }
